@@ -1,0 +1,40 @@
+.Card {
+  display: flex;
+  margin-bottom: 10px;
+  &__Image__Holder {
+    margin-inline-end: 16px;
+    width: 160px;
+    height: 90px;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__Data {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__Meta {
+    color: #606060;
+    span {
+      font-size: 1.2rem;
+      &:not(:last-of-type):after {
+        content: "•";
+        margin: 0 0.4rem;
+      }
+    }
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #606060;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
