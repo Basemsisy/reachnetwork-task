@@ -1,20 +1,33 @@
+@import "../../styles/vars.scss";
+
 .Header {
   background-color: red;
   padding-block: 10px;
+
   &__Wrapper {
     display: flex;
     align-items: center;
   }
+  &__Logo {
+    position: relative;
+    span {
+      position: absolute;
+      color: #606060;
+      text-transform: uppercase;
+      top: 5px;
+    }
+  }
   &__Form {
     display: flex;
     flex: 1;
+    align-items: center;
     &__Input {
       flex: 1;
       margin-inline: 10px;
       input {
         border: none;
         height: 30px;
-        padding: 5px;
+        padding: 5px 10px;
         width: 100%;
         border-radius: 3px;
         &:focus {
@@ -29,6 +42,36 @@
     &__Button {
       background-color: transparent;
       border: none;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 576px) {
+    background-color: #fff;
+    box-shadow: 1px 0px 2px $border-color;
+    &__Form {
+      &__Input {
+        margin-inline-start: 50px;
+        margin-inline-end: 0;
+        input {
+          border: 1px solid $border-color;
+          border-radius: 0;
+          height: 40px;
+          &:focus {
+            border: 1px solid blue;
+          }
+        }
+      }
+      &__Button {
+        border: 1px solid $border-color;
+        border-left-width: 0;
+        width: 50px;
+        background-color: #f8f8f8;
+        height: 40px;
+        svg {
+          stroke: black;
+        }
+      }
     }
   }
 }
