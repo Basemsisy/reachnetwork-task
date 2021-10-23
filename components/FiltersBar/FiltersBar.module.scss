@@ -1,0 +1,23 @@
+@import "../../styles/vars.scss";
+
+.FiltersBar {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px 5px;
+  border-bottom: 1px solid $border-color;
+  align-items: center;
+  margin-bottom: 20px;
+  p {
+    font-size: 12px;
+  }
+  &__Filter {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    p {
+      margin-inline-start: 5px;
+      text-transform: uppercase;
+    }
+  }
+}
