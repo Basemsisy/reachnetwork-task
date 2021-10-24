@@ -33,7 +33,13 @@
     font-size: 1.2rem;
     color: #606060;
     display: none;
-    @media (min-width: 768px) {
+  }
+  @media (min-width: 768px) {
+    &__Image__Holder {
+      width: 360px;
+      height: 200px;
+    }
+    p {
       display: block;
     }
   }

@@ -1,34 +1,33 @@
 import React from "react";
+import useWindowSize from "../../hooks/use-window-size";
 import styles from "./Card.module.scss";
 
-interface Props {}
+interface Props {
+  data: any;
+}
 
-export const Card = (props: Props) => {
+export const Card = ({ data }: Props) => {
+  const [width] = useWindowSize();
+  const isMobileScreen = width <= 576 ? "default" : "high";
+  const { title, description, channelTitle, publishedAt, thumbnails } = data;
   return (
     <div className={styles.Card}>
       <div className={styles.Card__Image__Holder}>
         <img
           width="360"
           className={styles.Image}
-          src="https://via.placeholder.com/150C/O https://placeholder.com/"
+          src={thumbnails[isMobileScreen]?.url}
           alt=""
         />
       </div>
       <div className={styles.Card__Data}>
-        <h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,
-          dolores.
-        </h3>
+        <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
         <div className={styles.Card__Meta}>
-          <span>basem *</span>
+          <span>{channelTitle}</span>
           <span>8.8k views</span>
-          <span>2 years ago</span>
+          <span>{publishedAt}</span>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto
-          ullam, ex modi suscipit amet repellat doloremque quod pariatur
-          explicabo fugiat.
-        </p>
+        <p>{description}</p>
       </div>
     </div>
   );
