@@ -1,5 +1,6 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Header.module.scss";
 import useWindowSize from "../../hooks/use-window-size";
@@ -31,19 +32,21 @@ const Header = () => {
     <header className={styles.Header}>
       <div className="container">
         <div className={styles.Header__Wrapper}>
-          {isMobileScreen ? (
-            <Image src="/logo.png" width={40} height={30} alt="logo" />
-          ) : (
-            <div className={styles.Header__Logo}>
-              <Image
-                src="/desktop-logo.png"
-                width={90}
-                height={40}
-                alt="logo"
-              />
-              <span>eg</span>
-            </div>
-          )}
+          <Link href="/">
+            {isMobileScreen ? (
+              <Image src="/logo.png" width={40} height={30} alt="logo" />
+            ) : (
+              <div className={styles.Header__Logo}>
+                <Image
+                  src="/desktop-logo.png"
+                  width={90}
+                  height={40}
+                  alt="logo"
+                />
+                <span>eg</span>
+              </div>
+            )}
+          </Link>
 
           <form onSubmit={submitHandler} className={styles.Header__Form}>
             <div className={styles.Header__Form__Input}>
