@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { Card } from "../components/Card";
 import FiltersBar from "../components/FiltersBar";
 import Spinner from "../components/Spinner";
-import { ResponseType } from "../types";
+import { ResponseType } from "../utils/types";
 import http from "../utils/http";
 
 const Home: NextPage = () => {

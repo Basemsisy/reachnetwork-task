@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 import { Card } from "../components/Card";
 import FiltersBar from "../components/FiltersBar";
 import Spinner from "../components/Spinner";
-import { ResponseType } from "../types";
+import { ResponseType } from "../utils/types";
 import http from "../utils/http";
 
 const Search: NextPage = () => {
@@ -19,10 +19,7 @@ const Search: NextPage = () => {
     return res.data;
   };
   const { data, isLoading, error, isError } = useQuery<
-    {
-      items: Array<any>;
-      pageInfo: { totalResults: number };
-    },
+    ResponseType,
     { message: string }
   >(["search-results", searchQuery], fetchData, {
     enabled: !!searchQuery,
