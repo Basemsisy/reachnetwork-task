@@ -20,4 +20,9 @@
       text-transform: uppercase;
     }
   }
+  select {
+    padding: 5px 10px;
+    margin-inline-end: 5px;
+    border: 1px solid $border-color;
+  }
 }
